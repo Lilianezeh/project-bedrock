@@ -10,15 +10,14 @@ on:
 
 permissions:
   contents: read
-  pull-requests: write   # Required to post plan as PR comment
+  pull-requests: write
 
 env:
-  TF_VERSION: "1.6.0"
+  TF_VERSION: "1.9.0"
   AWS_REGION:  "us-east-1"
 
 jobs:
 
-  # ── Runs on Pull Request → posts plan as a PR comment ──────────
   terraform-plan:
     name: Terraform Plan
     runs-on: ubuntu-latest
@@ -69,7 +68,6 @@ jobs:
               body
             });
 
-  # ── Runs on merge to main → applies changes ─────────────────────
   terraform-apply:
     name: Terraform Apply
     runs-on: ubuntu-latest
