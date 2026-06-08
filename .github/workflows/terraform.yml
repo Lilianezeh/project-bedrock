@@ -52,7 +52,8 @@ jobs:
         run: |
           terraform plan -no-color \
             -var="student_id=${{ secrets.TF_VAR_STUDENT_ID }}" \
-            -var="db_password=${{ secrets.TF_VAR_DB_PASSWORD }}" 2>&1
+            -var="mysql_password=${{ secrets.TF_VAR_MYSQL_PASSWORD }}" \
+            -var="pg_password=${{ secrets.TF_VAR_PG_PASSWORD }}" 2>&1
         continue-on-error: true
 
       - name: Post Plan as PR Comment
@@ -100,4 +101,5 @@ jobs:
         run: |
           terraform apply -auto-approve \
             -var="student_id=${{ secrets.TF_VAR_STUDENT_ID }}" \
-            -var="db_password=${{ secrets.TF_VAR_DB_PASSWORD }}"
+            -var="mysql_password=${{ secrets.TF_VAR_MYSQL_PASSWORD }}" \
+            -var="pg_password=${{ secrets.TF_VAR_PG_PASSWORD }}"
