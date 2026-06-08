@@ -27,3 +27,9 @@ variable "vpc_name" {
   type        = string
   default     = "project-bedrock-vpc"
 }# trigger CI
+
+variable "db_password" {
+  description = "RDS master password"
+  type        = string
+  sensitive   = true
+}
