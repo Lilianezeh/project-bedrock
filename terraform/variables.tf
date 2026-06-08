@@ -26,4 +26,4 @@ variable "vpc_name" {
   description = "Name tag for the VPC. Must match exactly — the grader checks this."
   type        = string
   default     = "project-bedrock-vpc"
-}
+}# trigger CI
