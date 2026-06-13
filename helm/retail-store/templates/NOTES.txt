@@ -1,0 +1,6 @@
+InnovateMart Retail Store has been deployed!
+
+Access the store at:
+  https://\{\{ .Values.ingress.host }}
+
+Namespace: {{ .Values.namespace }}

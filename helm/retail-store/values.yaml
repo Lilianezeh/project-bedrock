@@ -1,0 +1,30 @@
+namespace: retail-app
+
+ui:
+  image: public.ecr.aws/aws-containers/retail-store-sample-ui:1.6.1
+  replicas: 1
+  port: 8080
+
+orders:
+  image: public.ecr.aws/aws-containers/retail-store-sample-orders:1.6.1
+  replicas: 1
+  port: 8080
+
+catalog:
+  image: public.ecr.aws/aws-containers/retail-store-sample-catalog:1.6.1
+  replicas: 1
+  port: 8080
+
+carts:
+  image: public.ecr.aws/aws-containers/retail-store-sample-cart:1.6.1
+  replicas: 1
+  port: 8080
+
+checkout:
+  image: public.ecr.aws/aws-containers/retail-store-sample-checkout:1.6.1
+  replicas: 1
+  port: 8080
+
+ingress:
+  host: store.cloudwithlilian.online
+  certificateArn: arn:aws:acm:us-east-1:346133363198:certificate/02cb1c7d-30d2-481b-a736-b80c4c762e4b
